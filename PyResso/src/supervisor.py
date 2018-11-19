@@ -244,4 +244,8 @@ def main():
         final_choice = "FA:08\n"
     driver.send(final_choice)
 
-main()
+
+# Propper entrypoint.
+# Otherwise this could blow up if the code would be used as a library.
+if __name__ == "__main__":
+    main()
