@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50e0b1f9-d37c-4c9b-8d34-2b95f4cfc425" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Communication/capture.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Config/manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/imaging_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/decoding.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/interaction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PyResso.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PyResso.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config/Manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/Manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration/Template.conf" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/Template.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Communication/WireDriver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communication/wiredriver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Config/Manager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/create_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/create_new.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recognize_faces_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/recognize_faces_image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/smile_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/smile_detection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/supervisor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/supervisor.py" afterDir="false" />
     </list>
     <ignored path="data/" />
@@ -22,66 +32,50 @@
     <session id="-597310171">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="conf" value="2" />
-          <entry key="py" value="4" />
+          <entry key="conf" value="15" />
+          <entry key="py" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="4" />
+          <entry key="PLAIN_TEXT" value="15" />
+          <entry key="Python" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="275" />
-          <entry key="conf" value="3347" />
-          <entry key="py" value="3783" />
-          <entry key="txt" value="113" />
+          <entry key="Python Console" value="673" />
+          <entry key="conf" value="4283" />
+          <entry key="dummy" value="3" />
+          <entry key="py" value="7248" />
+          <entry key="txt" value="151" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="3460" />
-          <entry key="Python" value="4058" />
+          <entry key="PLAIN_TEXT" value="4437" />
+          <entry key="Python" value="7921" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Communication/database.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-278">
-              <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1230">
-              <caret line="82" selection-start-line="82" selection-end-line="82" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/supervisor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1485">
-              <caret line="138" column="17" selection-start-line="138" selection-start-column="17" selection-end-line="138" selection-end-column="17" />
+            <state relative-caret-position="-225">
+              <caret line="132" column="48" selection-start-line="132" selection-start-column="48" selection-end-line="132" selection-end-column="48" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -89,20 +83,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Config/Manager.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="60" column="12" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/configuration/Template.conf">
+        <entry file="file://$PROJECT_DIR$/src/Communication/capture.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="108" column="4" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="4" />
+            <state relative-caret-position="465">
+              <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+              <folding>
+                <element signature="e#24#62#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -130,9 +118,20 @@
         <option value="$PROJECT_DIR$/Communication/database.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/supervisor.py" />
-        <option value="$PROJECT_DIR$/src/supervisor.py" />
         <option value="$PROJECT_DIR$/src/Config/Manager.py" />
+        <option value="$PROJECT_DIR$/src/imaging_test.py" />
+        <option value="$PROJECT_DIR$/src/util/decoding.py" />
+        <option value="$PROJECT_DIR$/src/Communication/wiredriver.py" />
+        <option value="$PROJECT_DIR$/src/Config/manager.py" />
+        <option value="$PROJECT_DIR$/src/smile_detection.py" />
+        <option value="$PROJECT_DIR$/src/create_new.py" />
+        <option value="$PROJECT_DIR$/src/util/interaction.py" />
+        <option value="$PROJECT_DIR$/configuration/capture.py" />
         <option value="$PROJECT_DIR$/configuration/Template.conf" />
+        <option value="$PROJECT_DIR$/configuration/default.conf" />
+        <option value="$PROJECT_DIR$/src/recognize_faces_image.py" />
+        <option value="$PROJECT_DIR$/src/supervisor.py" />
+        <option value="$PROJECT_DIR$/src/Communication/capture.py" />
       </list>
     </option>
   </component>
@@ -163,17 +162,6 @@
             <path>
               <item name="PyResso" type="b2602c69:ProjectViewProjectNode" />
               <item name="PyResso" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PyResso" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PyResso" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PyResso" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PyResso" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -188,6 +176,12 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Config" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="PyResso" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PyResso" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -196,11 +190,13 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="doDr&#9;null&#9;null&#10;deco&#9;null&#9;null" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/data/shape_predictor_68_face_landmarks.dat" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Communication" />
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
@@ -218,7 +214,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.supervisor">
     <configuration name="Manager" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PyResso" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -231,7 +227,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Config/Manager.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Config/manager.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -240,8 +236,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="supervisor" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PyResso" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/supervisor.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Manager" />
+      <item itemvalue="Python.supervisor" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.supervisor" />
         <item itemvalue="Python.Manager" />
       </list>
     </recent_temporary>
@@ -285,31 +307,41 @@
       <option name="project" value="LOCAL" />
       <updated>1542578932647</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="made a template file for the config.">
+      <created>1542620706622</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1542620706622</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="36" width="1930" height="1049" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24986821" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19293621" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" weight="0.32969433" />
-      <window_info active="true" anchor="bottom" id="Python Console" sideWeight="0.49973643" visible="true" weight="0.32969433" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32969433" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.5002636" side_tool="true" weight="0.32969433" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32969433" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32969433" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32969433" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32969433" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32969433" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5002636" side_tool="true" weight="0.32969433" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49973643" weight="0.3286026" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -354,47 +386,121 @@
     <MESSAGE value="Started to clean up i2cHack repository" />
     <MESSAGE value="started to organize the python specific data." />
     <MESSAGE value="started to implement config" />
-    <option name="LAST_COMMIT_MESSAGE" value="started to implement config" />
+    <MESSAGE value="made a template file for the config." />
+    <option name="LAST_COMMIT_MESSAGE" value="made a template file for the config." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Communication/database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-278">
+        <state relative-caret-position="510">
           <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Config/Manager.py">
+    <entry file="file://$PROJECT_DIR$/src/imaging_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.6/shutil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/decoding.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Communication/wiredriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="72" selection-start-line="27" selection-start-column="72" selection-end-line="27" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Config/manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/smile_detection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-471">
+          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/create_new.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configuration/Template.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="140" column="20" selection-start-line="121" selection-end-line="140" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configuration/default.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="144" column="20" selection-start-line="144" selection-start-column="20" selection-end-line="144" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/recognize_faces_image.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="457">
-          <caret line="60" column="12" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
+          <caret line="69" column="19" selection-start-line="69" selection-start-column="19" selection-end-line="69" selection-end-column="19" />
+          <folding>
+            <element signature="e#136#159#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/supervisor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="138" column="17" selection-start-line="138" selection-start-column="17" selection-end-line="138" selection-end-column="17" />
+        <state relative-caret-position="-225">
+          <caret line="132" column="48" selection-start-line="132" selection-start-column="48" selection-end-line="132" selection-end-column="48" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configuration/Template.conf">
+    <entry file="file://$PROJECT_DIR$/src/util/interaction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="108" column="4" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="4" />
+        <state relative-caret-position="555">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Communication/capture.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+          <folding>
+            <element signature="e#24#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
