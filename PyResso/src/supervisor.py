@@ -47,14 +47,6 @@ def manageStream(b):
             return True
 
 vs = manageStream(True)
-# def createDir(path): # Can be suppelmented with os.Path.mkdir with the parameter exist_ok=True
-#     try:
-#         os.mkdir(path)
-#     except OSError:
-#         print("Creation of the directory %s failed" % path)
-#     else:
-#         print("Successfully created the directory %s " % path)
-#     return path
 
 
 def takePhoto(path, frame, time):
