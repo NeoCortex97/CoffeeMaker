@@ -3,24 +3,24 @@ from imutils import face_utils
 import imutils
 import dlib
 import cv2
-
+from src.Config.manager import Manager
 
 startingTime = -1
 waitingTime = 2000
 destinationTime = -1
 
-LANDMARKS_FILE = "shape_predictor_68_face_landmarks.dat"
-
+# LANDMARKS_FILE = "shape_predictor_68_face_landmarks.dat"
 
 # initialize the frame counter as well as a boolean used to
 # indicate if the alarm is going off
-doDraw = False
-
+conf = Manager()
+conf.load()
+doDraw = conf.getBool("DEFAULT:displayframes")
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor(LANDMARKS_FILE)
+predictor = dlib.shape_predictor(conf.get("FILES:landmarks"))
+
 
 def analyzePic(neutral_path):
-
     image = cv2.imread(neutral_path)
     image = imutils.resize(image, width=450)
 
@@ -32,6 +32,7 @@ def analyzePic(neutral_path):
 
         neutralMouth = dist.euclidean(shape[49], shape[55])
         return neutralMouth
+
 
 def eyeAspectRatio(eye):
     # compute the euclidean distances between the two sets of
@@ -90,8 +91,4 @@ def detectIsSmiling(shape, frame, neutral_mouth):
         cv2.putText(frame, "SMILE: {:.2f}".format(doesSmile), (300, 100),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 
-
     return doesSmile
-
-
-
