@@ -4,7 +4,7 @@ from imutils.video import VideoStream
 
 
 class FrameSource:
-    def __init__(self, config=Manager()):
+    def __init__(self, config=Manager(),):
         self.config = config
         if not self.config.isLoaded():
             self.config.load()
@@ -29,4 +29,14 @@ class FrameSource:
         elif "x" in resolution.lower():
             return resolution.split("x")
 
-# TODO: code the rest of the functions needed
+    def start(self):
+        self.stream.start()
+
+    def stop(self):
+        self.stream.stop()
+
+    def update(self):
+        self.stream.update()
+
+    def read(self):
+        return self.stream.read()

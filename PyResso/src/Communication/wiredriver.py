@@ -20,6 +20,7 @@ class WireDriver:
     def send(self, text=""):
         if text[-1] != "\n":
             text += "\n"
+        # print(text)
         if self.open:
             self.ser.write(bytes(text.encode()))
             string = self.ser.readline()
@@ -28,4 +29,5 @@ class WireDriver:
             print("Could not send command, because the port is not open!")
 
     def __del__(self):
-        self.ser.close()
+        if self.open:
+            self.ser.close()

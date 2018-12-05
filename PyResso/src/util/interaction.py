@@ -29,9 +29,8 @@ def chooseStrength():
 
 
 def enterName():
-    namesplit = input("Please enter your full name seperated by one space: \n").split()
-    if len(namesplit) != 2:
+    name= input("Please enter your full name seperated by one space: \n")
+    if name.count(" ") != 1:
         print("This seems wrong.. You need a first and a last name seperated by space.")
         enterName()
-    else:
-        return namesplit
+    return name
