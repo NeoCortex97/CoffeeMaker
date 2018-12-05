@@ -33,4 +33,4 @@ def enterName():
     if name.count(" ") != 1:
         print("This seems wrong.. You need a first and a last name seperated by space.")
         enterName()
-    return name
+    return name.replace(" ", "_")

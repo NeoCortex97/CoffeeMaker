@@ -6,7 +6,7 @@ from pathlib import Path
 from imutils.video import VideoStream
 from src.Communication.wiredriver import WireDriver
 from src.create_new import register_new
-from src.recognize_faces_image import recognize_face
+from src.recognize_faces_image import Recognizer
 from src.smile_detection import analyzePic
 from src.smile_detection import detectIsSmiling
 from src.Config.manager import Manager
@@ -15,7 +15,8 @@ from src.util.interaction import makeChoice, chooseStrength, enterName
 class Supervisor:
     def __init__(self):
         self.conf = Manager()
-        self.conf.load()
+        print(self.conf.load())
+        self.recognizer = Recognizer(self.conf)
 
         self.hasTakenImage = False
         self.startingTime = -1
@@ -25,7 +26,7 @@ class Supervisor:
         self.recognitionTime = 2000
         self.recognitionDestinationTime = -1
         self.smileStartingTime = -1
-        self.smilingTime = 1000
+        self.smilingTime = -1
         self.smileDestinationTime = -1
         self.smileGoalReached = False
         self.hasTakenNeutralImage = False
@@ -33,6 +34,7 @@ class Supervisor:
         self.hasToTakePhotos = False
         self.enableSmileDetection = True
         self.vs = VideoStream(int(self.conf.get("CAMERA:device")))
+        self.frames = dict()
 
 
     def manageStream(self, b):
@@ -41,25 +43,27 @@ class Supervisor:
             print("[INFO] starting video stream thread...")
             # vs = VideoStream(src=args["webcam"]).start()
             self.vs.start()
-            # time.sleep(1.0)
+            time.sleep(1.0)
         else:
             self.vs.stop()
 
     def takePhoto(self, path, frame, time):
         # global neutral_mouth
         if time == 0:
-            cv2.imwrite(self.conf.get("PATHS:data") + "examples/current0.png", frame)
+            self.frames["current"] = frame
+            # cv2.imwrite(self.conf.get("PATHS:data") + "examples/current0.png", frame)
         elif time == 1:
-            cv2.imwrite(self.conf.get("PATHS:data") + "examples/neutral0.png", frame)
-            self.neutral_mouth = analyzePic(self.conf.get("PATHS:data") + "/examples/neutral0.png")
+            self.frames["neutral"] = frame
+            # cv2.imwrite(self.conf.get("PATHS:data") + "examples/neutral0.png", frame)
+            self.neutral_mouth = analyzePic(self.frames["neutral"])
             self.hasTakenNeutralImage = True
         else:
-            cv2.imwrite(path + str(time) + ".png", frame)
+            cv2.imwrite(path + "/" + str(time) + ".png", frame)
             print(path + str(time) + ".png created")
 
-    def takePhotos(self, path, frame):
-        if self.startingTime == -1:
-            self.startingTime = int(round(time.time() * 1000))
+    def takePhotos(self, path, frame, started=0):
+        if started == 0:
+            started = int(round(time.time() * 1000))
             self.destinationTimes = [self.startingTime + (self.waitingTime * i) for i in range(5)]
             # for i in range(5):
             #     self.destinationTimes.append((self.waitingTime * i) + self.startingTime)
@@ -76,12 +80,25 @@ class Supervisor:
 
             print("PATH: " + path)
             register_new(path, self.conf.get("FILES:pickle"))
+            self.recognizer.loadEncodings()
+
+    def order(self):
+        choice = makeChoice()
+        if choice != 3:
+            strength = chooseStrength()
+        else:
+            strength = 0
+
+        print("You ordered %s in strength %s" % (choice, strength))
+        return choice
 
     def mainLoop(self):
         print("[INFO] loading facial landmark predictor...")
         detector = dlib.get_frontal_face_detector()
 
+        print("starteing detection ...")
         while True:
+            print("Top of mainloop!")
             currentTime = int(round(time.time() * 1000))
             frame = self.vs.read()
             frame = resize(frame, width=450)
@@ -90,12 +107,15 @@ class Supervisor:
             rects = detector(gray, 0)
 
             if len(rects) > 0:
+                print("detected {} faces".format(len(rects)))
                 shape = predictor(gray, rects[0])
                 if self.hasToTakePhotos:
+                    print("taking photos of new user")
                     self.takePhotos(user_path, frame)
                 else:
                     self.takePhoto(self.conf.get("PATHS:data") + "exampes/current0.png", frame, 0)
-                    recognizedFaces = recognize_face(self.conf.get("PATHS:data") + "/examples/current0.png")
+                    # recognizedFaces = recognize_face(self.conf.get("PATHS:data") + "/examples/current0.png")
+                    recognizedFaces = self.recognizer.recognize_face(self.frames["current"])
                     if recognizedFaces is not None:
                         if not self.hasTakenNeutralImage:
                             self.takePhoto(self.conf.get("PATHS:data") + "/exaples/neutral0.png", frame, 1)
@@ -111,7 +131,7 @@ class Supervisor:
                                 self.smileDestinationTime = self.smileStartingTime + self.smilingTime
                             else:
                                 if detectIsSmiling(shape, frame, self.neutral_mouth):
-                                    if self.smileDestinationTime - currentTime:
+                                    if self.smileDestinationTime - currentTime <= 0:
                                         smileGoalReached = True
                                 else:
                                     self.smileStartingTime = -1
@@ -119,11 +139,10 @@ class Supervisor:
 
                             if smileGoalReached:
                                 break
-
                     else:
-                        self.smileGoalReached = False
-                        self.smileDestinationTime = -1
-                        self.smileStartingTime = -1
+                        # self.smileGoalReached = False
+                        # self.smileDestinationTime = -1
+                        # self.smileStartingTime = -1
                         if self.recognitionStartingTime == -1:
                             self.recognitionStartingTime = currentTime
                             self.recognitionDestinationTime = self.recognitionStartingTime + self.recognitionTime
@@ -131,8 +150,11 @@ class Supervisor:
                             if self.recognitionDestinationTime > -1 and self.recognitionDestinationTime - currentTime:
                                 print("Hello! I seem to not know you!")
                                 name = enterName()
-                                # user_path = createDir(conf.get("PATHS:dataset") + "/" + namesplit[0] + " " + namesplit[1])
-                                user_path = Path(self.conf.get("PAHTS:dataset") + "/" + name).mkdir(parents=False, exist_ok=True).absolute
+                                # user_path = createDir(conf.get("PATHS:dataset") + "/" + namesplit[0] + " " + namespl/it[1])
+                                # print("The dataset directory is: {0}".format(self.conf.get("PATHS:dataset")))
+                                user_path = Path(self.conf.get("PATHS:dataset") + "/" + name + "/")
+                                user_path.mkdir(parents=False, exist_ok=True)
+                                user_path = str(user_path.resolve())
                                 # user_path = user_path + os.path.sep
                                 self.hasToTakePhotos = True
                                 self.recognitionDestinationTime = -1
@@ -151,14 +173,7 @@ class Supervisor:
             if key == ord("q"):
                 break
 
-        choice = makeChoice()
-        if choice != 3:
-            strength = chooseStrength()
-        else:
-            strength = 0
-
-        print("You ordered %s in strength %s" % (choice, strength))
-        WireDriver().send(["FA:04\n", "FA:03\n", "FA:08\n"][choice - 1])
+        WireDriver().send(["FA:04\n", "FA:03\n", "FA:08\n"][self.order() - 1])
 
 
 # Propper entrypoint.

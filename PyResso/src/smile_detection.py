@@ -20,18 +20,15 @@ detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor(conf.get("FILES:landmarks"))
 
 
-def analyzePic(neutral_path):
-    image = cv2.imread(neutral_path)
+def analyzePic(image):
+    # image = cv2.imread(neutral_path)
     image = imutils.resize(image, width=450)
 
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     rects = detector(gray, 0)
     for rect in rects:
-        shape = predictor(gray, rect)
-        shape = face_utils.shape_to_np(shape)
-
-        neutralMouth = dist.euclidean(shape[49], shape[55])
-        return neutralMouth
+        shape = face_utils.shape_to_np(predictor(gray, rect))
+        return dist.euclidean(shape[49], shape[55])
 
 
 def eyeAspectRatio(eye):

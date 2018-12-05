@@ -8,9 +8,9 @@ from imutils import paths
 
 def reshapeName(name):
     namesplit = name.split("_")
-    if(len(namesplit) == 2):
+    print(namesplit)
+    if len(namesplit) == 2:
         name = namesplit[0] + " " + namesplit[1]
-
         return name.title()
     else:
         print("The name is not shapable.")
@@ -19,14 +19,13 @@ def reshapeName(name):
 def register_new(path_dir, pickle_path):
     imagePaths = list(paths.list_images(path_dir))
     data = pickle.loads(open(pickle_path, "rb").read())
-
+    # data = {"encodings": list(), "names": list()}
     # loop over the image paths
     for (i, imagePath) in enumerate(imagePaths):
         # extract the person name from the image path
-        print("[INFO] processing image {}/{}".format(i + 1,
-                                                     len(imagePaths)))
+        print("[INFO] processing image {}/{}".format(i + 1, len(imagePaths)))
         dirsplit = path_dir.split(os.path.sep)
-        name = reshapeName(dirsplit[1])
+        name = reshapeName(dirsplit[-1])
 
         # load the input image and convert it from RGB (OpenCV ordering)
         # to dlib ordering (RGB)
@@ -35,8 +34,7 @@ def register_new(path_dir, pickle_path):
 
         # detect the (x, y)-coordinates of the bounding boxes
         # corresponding to each face in the input image
-        boxes = face_recognition.face_locations(rgb,
-                                                model="hog")
+        boxes = face_recognition.face_locations(rgb, model="hog")
 
         # compute the facial embedding for the face
         encodings = face_recognition.face_encodings(rgb, boxes)
@@ -44,7 +42,6 @@ def register_new(path_dir, pickle_path):
         tmp = np.asarray(encodings[0])
         data["encodings"].append(tmp)
         data["names"].append(name)
-    f = open(pickle_path, "wb")
-    f.write(pickle.dumps(data))
-    f.close()
+    with open(pickle_path, "wb") as f:
+        f.write(pickle.dumps(data))
     return data
