@@ -26,7 +26,7 @@ smileDestinationTime = -1
 smileGoalReached = False
 hasTakenNeutralImage = False
 
-LANDMARKS_FILE = "shape_predictor_68_face_landmarks.dat"
+LANDMARKS_FILE = "../data/shape_predictor_68_face_landmarks.dat"
 PICKLE_FILE = "encodings.pickle"
 EXAMPLES = "examples" + os.path.sep
 DATASET = "dataset" + os.path.sep

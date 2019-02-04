@@ -9,7 +9,7 @@ startingTime = -1
 waitingTime = 2000
 destinationTime = -1
 
-LANDMARKS_FILE = "shape_predictor_68_face_landmarks.dat"
+LANDMARKS_FILE = "../data/shape_predictor_68_face_landmarks.dat"
 
 
 # initialize the frame counter as well as a boolean used to
